@@ -5,4 +5,6 @@
 
 игнорировать файлы crash.log, override.tf, override.tf.json, terraform.rc, .terraformrc 
 
-игнорировать файлы содержащие *.tfstate.*
+игнорировать файлы содержащие *.tfstate.
+
+Новая строчка
