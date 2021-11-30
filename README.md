@@ -1,3 +1,35 @@
+
+[Unit]
+
+    Description=MyUnit
+    After=syslog.target
+    After=network.target
+    After=nginx.service
+    After=mysql.service
+    Requires=mysql.service
+    Wants=redis.service
+
+[Service]
+
+    Type=forking
+    PIDFile=/work/www/myunit/shared/tmp/pids/service.pid
+    WorkingDirectory=/work/www/myunit/current
+
+    Environment=RACK_ENV=production
+
+    OOMScoreAdjust=-1000
+
+    ExecStart=/usr/local/bin/bundle exec service -C /work/www/myunit/shared/config/service.rb --daemon
+    ExecStop=/usr/local/bin/bundle exec service -S /work/www/myunit/shared/tmp/pids/service.state stop
+    ExecReload=/usr/local/bin/bundle exec service -S /work/www/myunit/shared/tmp/pids/service.state restart
+    TimeoutSec=300
+
+[Install]
+    
+    WantedBy=multi-user.target 
+
+
+
 2. CPU:     
            
         node_cpu_seconds_total{cpu="0",mode="idle"} 
