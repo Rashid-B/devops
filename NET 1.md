@@ -174,7 +174,7 @@ URL-адрес запрошенного ресурса был изменен.
 
 #### *************************2*************************
 
-https
+https://raw.githubusercontent.com/Rashid-B/devops/fix/console.jpg
 
 #### *************************3*************************
 
@@ -221,7 +221,7 @@ traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
 
 #### *************************6*************************
 
-https
+https://github.com/Rashid-B/devops/blob/fix/1.jpg
 
 216.239.49.107
 
