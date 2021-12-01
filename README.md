@@ -15,11 +15,11 @@
     PIDFile=/work/www/myunit/shared/tmp/pids/service.pid
     WorkingDirectory=/work/www/myunit/current
 
-    Environment=RACK_ENV=production
+    EnvironmentFile=/work/www/myunit/shared/conf
 
     OOMScoreAdjust=-1000
 
-    ExecStart=/usr/local/bin/bundle exec service -C /work/www/myunit/shared/config/service.rb --daemon
+    ExecStart=/usr/local/bin/bundle exec service -C ${test} --daemon
     ExecStop=/usr/local/bin/bundle exec service -S /work/www/myunit/shared/tmp/pids/service.state stop
     ExecReload=/usr/local/bin/bundle exec service -S /work/www/myunit/shared/tmp/pids/service.state restart
     TimeoutSec=300
