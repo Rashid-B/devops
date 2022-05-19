@@ -12,7 +12,7 @@
 
 4. Проверяем готовность сервиса через [браузер](http://localhost:9000)
 
-   [SonarQube]: https://photos.app.goo.gl/2WV51EX1ufbbRekA6
+   https://photos.app.goo.gl/2WV51EX1ufbbRekA6
 
 5. Заходим под admin\admin, меняем пароль на свой
 
@@ -48,7 +48,7 @@
 
 6. Смотрим результат в интерфейсе
 
-   [Status]: https://photos.app.goo.gl/yrKDTwq5G68wt7ki8
+   https://photos.app.goo.gl/yrKDTwq5G68wt7ki8 
 
 7. Исправляем ошибки, которые он выявил(включая warnings)
 
@@ -56,7 +56,9 @@
 
 9. Делаем скриншот успешного прохождения анализа, прикладываем к решению ДЗ
 
-   [Результат]: https://photos.app.goo.gl/xmgHrQNa4DyyamAr8
+   https://photos.app.goo.gl/xmgHrQNa4DyyamAr8 
+   
+   
    
    
 
@@ -95,8 +97,10 @@
 
 4. В ответе присылаем файл `maven-metadata.xml` для этого артефекта
 
-   [Итог]: https://photos.app.goo.gl/7yWxCRBabUz5i8n36
+   https://photos.app.goo.gl/7yWxCRBabUz5i8n36 
 
+   
+   
    
 
 ### Знакомство с Maven
@@ -128,147 +132,136 @@
 
 2. Запускаем команду `mvn package` в директории с `pom.xml`, ожидаем успешного окончания
 
-   ioi@ioi-Pro:~/DevOps/CICD/09-ci-02-cicd/mvn$ mvn package
-   [INFO] Scanning for projects...
-   [INFO] 
-   [INFO] --------------------< com.netology.app:simple-app >---------------------
-   [INFO] Building simple-app 1.0-SNAPSHOT
-   [INFO] --------------------------------[ jar ]---------------------------------
-   Downloading from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom
-   [WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom
-   [WARNING] Could not validate integrity of download from http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom
-   org.eclipse.aether.transfer.ChecksumFailureException: Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de
-       at org.eclipse.aether.connector.basic.ChecksumValidator.validateExternalChecksums (ChecksumValidator.java:174)
-       at org.eclipse.aether.connector.basic.ChecksumValidator.validate (ChecksumValidator.java:103)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask (BasicRepositoryConnector.java:460)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run (BasicRepositoryConnector.java:364)
-       at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run (RunnableErrorForwarder.java:75)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute (BasicRepositoryConnector.java:628)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get (BasicRepositoryConnector.java:262)
-       at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads (DefaultArtifactResolver.java:514)
-       at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve (DefaultArtifactResolver.java:402)
-       at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts (DefaultArtifactResolver.java:229)
-       at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact (DefaultArtifactResolver.java:207)
-       at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom (DefaultArtifactDescriptorReader.java:240)
-       at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor (DefaultArtifactDescriptorReader.java:171)
-       at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.resolveCachedArtifactDescriptor (DefaultDependencyCollector.java:538)
-       at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.getArtifactDescriptorResult (DefaultDependencyCollector.java:523)
-       at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.processDependency (DefaultDependencyCollector.java:410)
-       at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.processDependency (DefaultDependencyCollector.java:362)
-       at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.process (DefaultDependencyCollector.java:349)
-       at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.collectDependencies (DefaultDependencyCollector.java:254)
-       at org.eclipse.aether.internal.impl.DefaultRepositorySystem.collectDependencies (DefaultRepositorySystem.java:284)
-       at org.apache.maven.project.DefaultProjectDependenciesResolver.resolve (DefaultProjectDependenciesResolver.java:170)
-       at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.getDependencies (LifecycleDependencyResolver.java:243)
-       at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.resolveProjectDependencies (LifecycleDependencyResolver.java:147)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.ensureDependenciesAreResolved (MojoExecutor.java:339)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:293)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:211)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:165)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:157)
-       at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:121)
-       at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
-       at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
-       at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:127)
-       at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:294)
-       at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
-       at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
-       at org.apache.maven.cli.MavenCli.execute (MavenCli.java:960)
-       at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:293)
-       at org.apache.maven.cli.MavenCli.main (MavenCli.java:196)
-       at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
-       at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
-       at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
-       at java.lang.reflect.Method.invoke (Method.java:568)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
-   [WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom
-   Downloaded from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom (7.9 kB at 59 kB/s)
-   [WARNING] The POM for netology:java:tar.gz:distrib:8_282 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
-   Downloading from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz
-   [WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz
-   [WARNING] Could not validate integrity of download from http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz
-   org.eclipse.aether.transfer.ChecksumFailureException: Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de
-       at org.eclipse.aether.connector.basic.ChecksumValidator.validateExternalChecksums (ChecksumValidator.java:174)
-       at org.eclipse.aether.connector.basic.ChecksumValidator.validate (ChecksumValidator.java:103)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask (BasicRepositoryConnector.java:460)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run (BasicRepositoryConnector.java:364)
-       at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run (RunnableErrorForwarder.java:75)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute (BasicRepositoryConnector.java:628)
-       at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get (BasicRepositoryConnector.java:262)
-       at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads (DefaultArtifactResolver.java:514)
-       at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve (DefaultArtifactResolver.java:402)
-       at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts (DefaultArtifactResolver.java:229)
-       at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies (DefaultRepositorySystem.java:340)
-       at org.apache.maven.project.DefaultProjectDependenciesResolver.resolve (DefaultProjectDependenciesResolver.java:207)
-       at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.getDependencies (LifecycleDependencyResolver.java:243)
-       at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.resolveProjectDependencies (LifecycleDependencyResolver.java:147)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.ensureDependenciesAreResolved (MojoExecutor.java:339)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:293)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:211)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:165)
-       at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:157)
-       at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:121)
-       at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)
-       at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)
-       at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:127)
-       at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:294)
-       at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
-       at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
-       at org.apache.maven.cli.MavenCli.execute (MavenCli.java:960)
-       at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:293)
-       at org.apache.maven.cli.MavenCli.main (MavenCli.java:196)
-       at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
-       at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
-       at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
-       at java.lang.reflect.Method.invoke (Method.java:568)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
-       at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
-   [WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz
-   Downloaded from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz (7.9 kB at 102 kB/s)
-   [INFO] 
-   [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ simple-app ---
-   [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-   [INFO] skip non existing resourceDirectory /home/ioi/DevOps/CICD/09-ci-02-cicd/mvn/src/main/resources
-   [INFO] 
-   [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ simple-app ---
-   [INFO] No sources to compile
-   [INFO] 
-   [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ simple-app ---
-   [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
-   [INFO] skip non existing resourceDirectory /home/ioi/DevOps/CICD/09-ci-02-cicd/mvn/src/test/resources
-   [INFO] 
-   [INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ simple-app ---
-   [INFO] No sources to compile
-   [INFO] 
-   [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ simple-app ---
-   [INFO] No tests to run.
-   [INFO] 
-   [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ simple-app ---
-   [WARNING] JAR will be empty - no content was marked for inclusion!
-   [INFO] Building jar: /home/ioi/DevOps/CICD/09-ci-02-cicd/mvn/target/simple-app-1.0-SNAPSHOT.jar
-   [INFO] ------------------------------------------------------------------------
-   [INFO] BUILD SUCCESS
-   [INFO] ------------------------------------------------------------------------
-   [INFO] Total time:  1.160 s
-   [INFO] Finished at: 2022-05-19T16:22:38+03:00
-   [INFO] ------------------------------------------------------------------------
-   ioi@ioi-Pro:~/DevOps/CICD/09-ci-02-cicd/mvn$ ls -la ~/.m2/repository/netology/java/8_282/
-   итого 52
-   drwxrwxr-x 2 ioi ioi 4096 мая 19 16:22 .
-   drwxrwxr-x 3 ioi ioi 4096 мая 19 16:18 ..
-   -rw-rw-r-- 1 ioi ioi 7925 мая 19 16:22 java-8_282-distrib.tar.gz
-   -rw-rw-r-- 1 ioi ioi  463 мая 19 16:22 java-8_282-distrib.tar.gz.lastUpdated
-   -rw-rw-r-- 1 ioi ioi 7925 мая 19 16:22 java-8_282-distrib.tar.gz.sha1
-   -rw-rw-r-- 1 ioi ioi 7925 мая 19 16:22 java-8_282.pom
-   -rw-rw-r-- 1 ioi ioi  803 мая 19 16:22 java-8_282.pom.lastUpdated
-   -rw-rw-r-- 1 ioi ioi 7925 мая 19 16:22 java-8_282.pom.sha1
-   -rw-rw-r-- 1 ioi ioi  199 мая 19 16:22 _remote.repositories
-
+   `ioi@ioi-Pro:~/DevOps/CICD/09-ci-02-cicd/mvn$ mvn package`
+   `[INFO] Scanning for projects...`
+   `[INFO]` 
+   `[INFO] --------------------< com.netology.app:simple-app >---------------------`
+   `[INFO] Building simple-app 1.0-SNAPSHOT`
+   `[INFO] --------------------------------[ jar ]---------------------------------`
+   `Downloading from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom`
+   `[WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom`
+   `[WARNING] Could not validate integrity of download from http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom`
+   `org.eclipse.aether.transfer.ChecksumFailureException: Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de`
+       `at org.eclipse.aether.connector.basic.ChecksumValidator.validateExternalChecksums (ChecksumValidator.java:174)`
+       `at org.eclipse.aether.connector.basic.ChecksumValidator.validate (ChecksumValidator.java:103)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask (BasicRepositoryConnector.java:460)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run (BasicRepositoryConnector.java:364)`
+       `at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run (RunnableErrorForwarder.java:75)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute (BasicRepositoryConnector.java:628)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get (BasicRepositoryConnector.java:262)`
+       `at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads (DefaultArtifactResolver.java:514)`
+       `at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve (DefaultArtifactResolver.java:402)`
+       `at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts (DefaultArtifactResolver.java:229)`
+       `at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact (DefaultArtifactResolver.java:207)`
+       `at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom (DefaultArtifactDescriptorReader.java:240)`
+       `at org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor (DefaultArtifactDescriptorReader.java:171)`
+       `at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.resolveCachedArtifactDescriptor (DefaultDependencyCollector.java:538)`
+       `at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.getArtifactDescriptorResult (DefaultDependencyCollector.java:523)`
+       `at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.processDependency (DefaultDependencyCollector.java:410)`
+       `at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.processDependency (DefaultDependencyCollector.java:362)`
+       `at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.process (DefaultDependencyCollector.java:349)`
+       `at org.eclipse.aether.internal.impl.collect.DefaultDependencyCollector.collectDependencies (DefaultDependencyCollector.java:254)`
+       `at org.eclipse.aether.internal.impl.DefaultRepositorySystem.collectDependencies (DefaultRepositorySystem.java:284)`
+       `at org.apache.maven.project.DefaultProjectDependenciesResolver.resolve (DefaultProjectDependenciesResolver.java:170)`
+       `at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.getDependencies (LifecycleDependencyResolver.java:243)`
+       `at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.resolveProjectDependencies (LifecycleDependencyResolver.java:147)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.ensureDependenciesAreResolved (MojoExecutor.java:339)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:293)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:211)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:165)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:157)`
+       `at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:121)`
+       `at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)`
+       `at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)`
+       `at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:127)`
+       `at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:294)`
+       `at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)`
+       `at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)`
+       `at org.apache.maven.cli.MavenCli.execute (MavenCli.java:960)`
+       `at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:293)`
+       `at org.apache.maven.cli.MavenCli.main (MavenCli.java:196)`
+       `at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)`
+       `at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)`
+       `at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)`
+       `at java.lang.reflect.Method.invoke (Method.java:568)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)`
+   `[WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom`
+   `Downloaded from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282.pom (7.9 kB at 59 kB/s)`
+   `[WARNING] The POM for netology:java:tar.gz:distrib:8_282 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details`
+   `Downloading from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz`
+   `[WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz`
+   `[WARNING] Could not validate integrity of download from http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz`
+   `org.eclipse.aether.transfer.ChecksumFailureException: Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de`
+       `at org.eclipse.aether.connector.basic.ChecksumValidator.validateExternalChecksums (ChecksumValidator.java:174)`
+       `at org.eclipse.aether.connector.basic.ChecksumValidator.validate (ChecksumValidator.java:103)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector$GetTaskRunner.runTask (BasicRepositoryConnector.java:460)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run (BasicRepositoryConnector.java:364)`
+       `at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run (RunnableErrorForwarder.java:75)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute (BasicRepositoryConnector.java:628)`
+       `at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get (BasicRepositoryConnector.java:262)`
+       `at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads (DefaultArtifactResolver.java:514)`
+       `at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve (DefaultArtifactResolver.java:402)`
+       `at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts (DefaultArtifactResolver.java:229)`
+       `at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveDependencies (DefaultRepositorySystem.java:340)`
+       `at org.apache.maven.project.DefaultProjectDependenciesResolver.resolve (DefaultProjectDependenciesResolver.java:207)`
+       `at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.getDependencies (LifecycleDependencyResolver.java:243)`
+       `at org.apache.maven.lifecycle.internal.LifecycleDependencyResolver.resolveProjectDependencies (LifecycleDependencyResolver.java:147)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.ensureDependenciesAreResolved (MojoExecutor.java:339)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute (MojoExecutor.java:293)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:211)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:165)`
+       `at org.apache.maven.lifecycle.internal.MojoExecutor.execute (MojoExecutor.java:157)`
+       `at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:121)`
+       `at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject (LifecycleModuleBuilder.java:81)`
+       `at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build (SingleThreadedBuilder.java:56)`
+       `at org.apache.maven.lifecycle.internal.LifecycleStarter.execute (LifecycleStarter.java:127)`
+       `at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:294)`
+       `at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)`
+       `at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)`
+       `at org.apache.maven.cli.MavenCli.execute (MavenCli.java:960)`
+       `at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:293)`
+       `at org.apache.maven.cli.MavenCli.main (MavenCli.java:196)`
+       `at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)`
+       `at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)`
+       `at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)`
+       `at java.lang.reflect.Method.invoke (Method.java:568)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)`
+       `at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)`
+   `[WARNING] Checksum validation failed, expected <!DOCTYPE but is 22540da6d5b3c1b400f491eee6c795a0d49c18de from my-repo for http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz`
+   `Downloaded from my-repo: http://localhost:8081/#browse/browse:maven-public/netology/java/8_282/java-8_282-distrib.tar.gz (7.9 kB at 102 kB/s)`
+   `[INFO]` 
+   `[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ simple-app ---`
+   `[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!`
+   `[INFO] skip non existing resourceDirectory /home/ioi/DevOps/CICD/09-ci-02-cicd/mvn/src/main/resources`
+   `[INFO]` 
+   `[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ simple-app ---`
+   `[INFO] No sources to compile`
+   `[INFO]` 
+   `[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ simple-app ---`
+   `[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!`
+   `[INFO] skip non existing resourceDirectory /home/ioi/DevOps/CICD/09-ci-02-cicd/mvn/src/test/resources`
+   `[INFO]` 
+   `[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ simple-app ---`
+   `[INFO] No sources to compile`
+   `[INFO]` 
+   `[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ simple-app ---`
+   `[INFO] No tests to run.`
+   `[INFO]` 
+   `[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ simple-app ---`
+   `[WARNING] JAR will be empty - no content was marked for inclusion!`
+   `[INFO] Building jar: /home/ioi/DevOps/CICD/09-ci-02-cicd/mvn/target/simple-app-1.0-SNAPSHOT.jar`
+   `[INFO] ------------------------------------------------------------------------`
+   `[INFO] BUILD SUCCESS`
+   `[INFO] ------------------------------------------------------------------------`
+   `[INFO] Total time:  1.160 s`
+   `[INFO] Finished at: 2022-05-19T16:22:38+03:00`
+   `[INFO] ------------------------------------------------------------------------`
+   
 3. Проверяем директорию `~/.m2/repository/`, находим наш артефакт
 
    `ioi@ioi-Pro:~$ ll ~/.m2/repository/netology/java/8_282/`
