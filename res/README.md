@@ -6,9 +6,8 @@
 - Создан S3 bucket в YC аккаунте;
 - Настроено управление DNS; 
 
->![PID 1](https://photos.app.goo.gl/yR2vZPcX3anaBdTN7)  
->
->![PID 1](https://photos.app.goo.gl/W7Xfc9xVRSug6tdq5) 
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/s3.png)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/ip.png) 
 
 Развертывание инфраструктуры
 
@@ -20,28 +19,26 @@
 - `dns.txt`  Содержит настройки dns;
 - `image.txt`  Содержит image;
 - `app.tf`, `db01.tf`,`db02.tf`, `gitlab.tf`, `monitoring.tf`. `nginx.tf`, `runner.tf` Содержат манифесты для создания виртуальных машин в YC.
->![PID 1](https://photos.app.goo.gl/o7x24DxVyfkX9r2F9)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/vm.png)
 
 ## Установка Nginx и LetsEncrypt
 Все необходимые роли находятся в каталоге `Ansible` и разделены по сервисам. 
 
-
-
->![PID 1](https://photos.app.goo.gl/6qFHWA9rytCbSsEq6)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/cert.png)
 
 ## Установка кластера MySQL
 
->![PID 1](https://photos.app.goo.gl/DAxwxAdWg2soHPbu7)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/check.png)
 
 ## Установка WordPress
 
->![PID 1](https://photos.app.goo.gl/U1w9aqentYr7Ydyt7)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/wordpress.png)
 
 ## Установка Gitlab CE и Gitlab Runner
 
  Runner подключился к Gitlab.
 
->![PID 1](https://photos.app.goo.gl/y8Figmockr48FGvY6)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/runner.png)
 
 
 Для выполнения задачи deploy из GitLab:
@@ -66,9 +63,9 @@ deploy-job:
     - ssh -o StrictHostKeyChecking=no ubuntu@app.weget2u.ru sudo chown www-data /var/www/weget2u.ru/ -R
 ```
 
->![PID 1](https://photos.app.goo.gl/Htxj8M6sj6do8uEs8)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/repo.png)
 >
->![PID 1](https://photos.app.goo.gl/ntbfSTdj1TUk6a8q6)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/do.png)
 
 При commit в репозитории GitLab изменения будут отправляться на сервер c wordpress(app.weget2u.ru).
 
@@ -76,8 +73,8 @@ deploy-job:
 
 Интерфейс `Grafana`, `Prometheus` и `alertmanager` теперь доступны по https. 
 
->![PID 1](https://photos.app.goo.gl/qNgwM9rAkSH7Jw2Z8)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/prometheus.png)
 
->![PID 1](https://photos.app.goo.gl/5a8yd1SjuvJpnpJr7)
->
->![PID 1](https://photos.app.goo.gl/3Zjm69LKiGZVE11U6)
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/alert.png)
+
+>![PID 1](https://github.com/Rashid-B/devops/blob/master/res/src/node.png)
