@@ -1,0 +1,23 @@
+- name: Change Hosts File
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: "{{ item.regexp | default(omit) }}"
+    insertafter: "127.0.0.1 localhost"
+    line: "{{ item.line }}"
+  loop:
+    - regexp: mon
+      line: "{{ ip_mon }} monitoring monitoring.{{ domain_name }}"
+    - regexp: Runner
+      line: "{{ ip_runner }} runner runner.{{ domain_name }}"
+    - regexp: Gitlab
+      line: "{{ ip_gitlab }} gitlab gitlab.{{ domain_name }}"
+    - regexp: DB02
+      line: "{{ ip_db02 }} db02 db02.{{ domain_name }}"
+    - regexp: DB01
+      line: "{{ ip_db01 }} db01 db01.{{ domain_name }}"
+    - regexp: Wordpress
+      line: "{{ ip_app }} app app.{{ domain_name }}"
+    - regexp: Nginx_to
+      line: "{{ ip_nginx }} nginx {{ domain_name }}"
+    - regexp: Nginx
+      line: "{{ ip_nginx }} nginx www.{{ domain_name }}"
